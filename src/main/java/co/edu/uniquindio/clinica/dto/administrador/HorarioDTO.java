@@ -1,6 +1,8 @@
 package co.edu.uniquindio.clinica.dto.administrador;
 
-public record HorarioDTO (String dia, String horaInicio, String horaSalida) {
+import java.time.LocalTime;
+
+public record HorarioDTO (String dia, LocalTime horaInicio, LocalTime horaSalida) {
 
 
 }

@@ -3,8 +3,7 @@ package co.edu.uniquindio.clinica.modelo.entidades;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Objects;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -17,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Medico implements Serializable {
+public class Medico extends Cuenta implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
