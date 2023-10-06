@@ -1,10 +1,11 @@
 package co.edu.uniquindio.clinica.servicios;
 
 import co.edu.uniquindio.clinica.dto.*;
-import co.edu.uniquindio.clinica.modelo.entidades.Medico;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface AdministradorServicio {
 
     int crearMedico(RegistroMedicoDTO medicoDTO) throws Exception;
