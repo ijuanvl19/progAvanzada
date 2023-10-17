@@ -1,4 +1,9 @@
 package co.edu.uniquindio.clinica.dto.medico;
 
-public record DiaLibreDTO() {
+import java.time.LocalDateTime;
+
+public record DiaLibreDTO(
+
+        LocalDateTime fechaLibre
+) {
 }

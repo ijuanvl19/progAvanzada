@@ -1,11 +1,11 @@
-package co.edu.uniquindio.clinica.dto;
+package co.edu.uniquindio.clinica.dto.administrador;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 public record RegistroRespuestaDTO(
         @Positive
-        int codigoCuenta,
+        int id,
         @Positive
         int codigoPQRS,
         @Positive

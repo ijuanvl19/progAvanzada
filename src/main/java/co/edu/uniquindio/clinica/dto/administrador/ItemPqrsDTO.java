@@ -1,19 +1,21 @@
 package co.edu.uniquindio.clinica.dto.administrador;
 
-import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
+import co.edu.uniquindio.clinica.modelo.enums.EstadoPqrs;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
-public record ItemMedicoDTO(
+import java.time.LocalDateTime;
+
+public record ItemPqrsDTO(
         @NotEmpty
         int codigo,
         @NotNull
-        String cedula,
+        EstadoPqrs estado,
         @NotNull
-        String nombre,
+        String motivo,
         @NotNull
-        String urlFoto,
+        LocalDateTime fecha,
         @NotNull
-        Especialidad especialidad
+        String nombrePaciente
 ) {
 }

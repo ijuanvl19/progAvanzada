@@ -21,7 +21,7 @@ public class Formula implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    private String idFormula;
+    private int idFormula;
     private String Descripcion;
     private String Observaciones;
     //private String Atencion; fk a atencion

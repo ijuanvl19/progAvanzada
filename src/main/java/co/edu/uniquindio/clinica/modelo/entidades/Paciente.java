@@ -1,5 +1,8 @@
 package co.edu.uniquindio.clinica.modelo.entidades;
 
+
+import co.edu.uniquindio.clinica.modelo.enums.Eps;
+import co.edu.uniquindio.clinica.modelo.enums.TipoSangre;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -11,24 +14,28 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.EqualsAndHashCode;
 
-@Entity
+
+@Table(name="paciente")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Paciente extends Cuenta implements Serializable {
+public class Paciente extends Usuario implements Serializable {
 
-    @Id
-    @EqualsAndHashCode.Include
-    private String idPaciente;
-    private String Cedula;
-    private String Nombre;
-    private String Telefono;
-    private String Ciudad;
+
+    @Column(name = "fechaNacimiento")
     private LocalDateTime FechaNacimiento;
+
+    @Column(name = "alergias")
     private String Alergias;
-    //private String eps;
-    //private String Tipo_sangre;      fks
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "eps")
+    private Eps eps;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_sangre")
+    private TipoSangre tipoSangre;
 
 }

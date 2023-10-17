@@ -1,43 +1,34 @@
-package co.edu.uniquindio.clinica.dto.administrador;
+package co.edu.uniquindio.clinica.dto.paciente;
 
-import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
 import co.edu.uniquindio.clinica.modelo.enums.Ciudad;
-import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
+import co.edu.uniquindio.clinica.modelo.enums.TipoSangre;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import org.hibernate.validator.constraints.Length;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-
-public record DetalleMedicoDTO(
+public record DetallePacienteDTO(
         @Positive
         int id,
         @NotEmpty
         @Length(max = 200)
-        String nombre,
+        String name,
         @NotEmpty
         @Length(max = 10)
         String cedula,
         @NotNull
         Ciudad ciudad,
-        @NotNull
-        Especialidad especialidad,
         @NotEmpty
         @Length(max = 20)
-        String telefono,
+        String phone,
         @NotEmpty
         @Email
         @Length(max = 80)
-        String correo,
+        String email,
         @NotEmpty
-        String urlFoto,
+        String urlImage,
         @NotEmpty
-        LocalDateTime diaLibre,
-        @NotEmpty
-        List<HorarioDTO> horarios
+        TipoSangre tipoSangre
 ) {
 }
