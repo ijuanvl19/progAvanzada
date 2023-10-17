@@ -23,6 +23,8 @@ public interface AdministradorServicio {
 
     DetallePqrsDTO verDetallePqrs(int codigo) throws Exception;
 
+    List<ItemPqrsDTO> listarPQRS() throws Exception;
+
     int responderPQRS(RegistroRespuestaDTO registroRespuestaDTO) throws Exception;
 
     void cambiarEstadoPqrs(int codigoPqrs, EstadoPqrs estadoPqrs) throws Exception;
