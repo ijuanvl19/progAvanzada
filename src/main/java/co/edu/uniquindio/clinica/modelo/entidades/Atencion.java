@@ -11,6 +11,7 @@ import lombok.ToString;
 import lombok.EqualsAndHashCode;
 
 @Entity
+@Table(name="atencion")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,15 +21,20 @@ public class Atencion implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    private String idatencion;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
-    private String Sintomas;
+    @Column(name = "diagnostico", length = 225)
+    private String diagnostico;
 
-    private String Diagnostico;
-
+    @Column(name = "tratamiento", length = 225)
     private String tratamiento;
 
-    private String Historico;
+    @Column(name = "notas_medicas", length = 225)
+    private String notasMedicas;
+
+    @Column(name = "id_cita",nullable = false)
+    private Cita cita;
 
 
     //private String Cita; llave a cita

@@ -1,36 +1,47 @@
 package co.edu.uniquindio.clinica.modelo.entidades;
 
+import co.edu.uniquindio.clinica.modelo.enums.EstadoCita;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.EqualsAndHashCode;
+
+import lombok.*;
 
 @Entity
+@Table(name="cita")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cita implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    private String idCita;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    private String detalleConsulta;
+    @Column(name="fecha_creacion")
+    private LocalDateTime fechaCreacion;
 
+    @Column(name="fecha_cita")
     private LocalDateTime fechaCita;
 
-    private LocalDateTime FechaCreacion;
+    @Column(name="motivo")
+    private String motivo;
 
-    private String EstadoCita;
+    @Column(name = "nombre_paciente",nullable = false)
+    private String NombrePaciente;
 
-    private String Paciente;
+    @Column(name = "nombre_medico",nullable = false)
+    private String nombreMedico;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado_cita")
+    private EstadoCita estadoCita;
+
 }
 
 

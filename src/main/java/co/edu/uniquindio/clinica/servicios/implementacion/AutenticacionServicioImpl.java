@@ -1,6 +1,6 @@
 package co.edu.uniquindio.clinica.servicios.implementacion;
 
-import co.edu.uniquindio.clinica.servicios.AutenticacionServicio;
+import co.edu.uniquindio.clinica.servicios.interfaces.AutenticacionServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

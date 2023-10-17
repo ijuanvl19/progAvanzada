@@ -1,30 +1,28 @@
 package co.edu.uniquindio.clinica.modelo.entidades;
 
+
+import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Entity
+@Table(name="medico")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Medico extends Cuenta implements Serializable {
+public class Medico extends Usuario implements Serializable {
 
-    @Id
-    @EqualsAndHashCode.Include
-    private String idMedico;
-    private String Nombre;
-    private String cedula;
-    private String telefono;
-    private String ciudad;
-    private String HorarioAtencion; // revisar
-    //private String Atencion; fk a Cita
+    @Enumerated(EnumType.STRING)
+    @Column(name = "especialidad")
+    private Especialidad especialidad;
+
+    @Column(name = "horario_medico")
+    private HorarioMedico horarioMedico;
+
 }

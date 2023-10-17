@@ -1,15 +1,22 @@
 package co.edu.uniquindio.clinica.modelo.entidades;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import co.edu.uniquindio.clinica.modelo.enums.Ciudad;
+import co.edu.uniquindio.clinica.modelo.enums.EstadoUsuario;
+import co.edu.uniquindio.clinica.modelo.enums.TipoSangre;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 import java.io.Serializable;
 
-
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuario extends Cuenta implements Serializable {
 
     @Column(nullable = false, length = 10, unique = true)
@@ -22,11 +29,17 @@ public class Usuario extends Cuenta implements Serializable {
     private String telefono;
 
     @Column(nullable = false)
-    private urlFoto;
+    private String urlFoto;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Ciudad ciudad;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private estadoUsuario estado;
+    private TipoSangre tipoSangre;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EstadoUsuario estado;
 }

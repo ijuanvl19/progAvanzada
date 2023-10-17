@@ -1,4 +1,4 @@
-package co.edu.uniquindio.clinica.dto.administrador;
+package co.edu.uniquindio.clinica.dto.paciente;
 
 import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
 import co.edu.uniquindio.clinica.modelo.enums.Ciudad;
@@ -12,27 +12,15 @@ import org.hibernate.validator.constraints.Length;
 import java.time.LocalDateTime;
 import java.util.List;
 
+public record DetalleMedicoCitaDTO(
 
-public record DetalleMedicoDTO(
         @Positive
         int id,
         @NotEmpty
         @Length(max = 200)
         String nombre,
-        @NotEmpty
-        @Length(max = 10)
-        String cedula,
-        @NotNull
-        Ciudad ciudad,
         @NotNull
         Especialidad especialidad,
-        @NotEmpty
-        @Length(max = 20)
-        String telefono,
-        @NotEmpty
-        @Email
-        @Length(max = 80)
-        String correo,
         @NotEmpty
         String urlFoto,
         @NotEmpty

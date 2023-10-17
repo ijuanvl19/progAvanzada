@@ -1,5 +1,6 @@
 package co.edu.uniquindio.clinica.dto.administrador;
 
+import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
 import co.edu.uniquindio.clinica.modelo.enums.Ciudad;
 import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
 import jakarta.validation.constraints.Email;
