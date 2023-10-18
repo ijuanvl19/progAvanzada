@@ -22,7 +22,7 @@ public class HorarioMedico {
     private int codigo;
 
     @Column(name = "dia")
-    private String dia;
+    private LocalDateTime dia;
 
     @Column(name = "hora_inicio")
     private LocalDateTime horaInicio;

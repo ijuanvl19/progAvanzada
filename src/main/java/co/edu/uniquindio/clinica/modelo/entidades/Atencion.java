@@ -22,7 +22,7 @@ public class Atencion implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
 
     @Column(name = "diagnostico", length = 225)
     private String diagnostico;

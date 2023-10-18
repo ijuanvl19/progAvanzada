@@ -1,12 +1,15 @@
 package co.edu.uniquindio.clinica.servicios.interfaces;
 
 import co.edu.uniquindio.clinica.dto.NewPasswordDTO;
+import co.edu.uniquindio.clinica.dto.administrador.RegistroRespuestaDTO;
 import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
-import co.edu.uniquindio.clinica.dto.paciente.DetallePacienteDTO;
-import co.edu.uniquindio.clinica.dto.paciente.RegistroPacienteDTO;
-import co.edu.uniquindio.clinica.dto.paciente.RegistroPqrsDTO;
+import co.edu.uniquindio.clinica.dto.paciente.*;
 import co.edu.uniquindio.clinica.modelo.entidades.DiaLibreMedico;
+import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Service
@@ -16,31 +19,35 @@ public interface PacienteServicio {
 
     int editarPerfil(DetallePacienteDTO pacienteDTO) throws Exception;
 
-    void eliminarCuenta() throws Exception;
+    DetallePacienteDTO verDetallePaciente(DetallePacienteDTO pacienteDTO) throws Exception;
 
     void eliminarCuenta(int id) throws Exception;
 
     void enviarLinkRecuperacion() throws Exception;
 
-    void agendarCita() throws Exception;
-
-    void changePassword(String passwordActualDTO, String passwordNewDTO,
+    void cambiarPassword(String passwordActualDTO, String passwordNewDTO,
                         NewPasswordDTO pacienteDTO) throws Exception;
 
-    void agendarCita(DiaLibreMedico diaDTO, HorarioDTO horarioDTO,
-                     DetallePacienteDTO pacienteDTO) throws Exception;
 
-    int crearPQRS(RegistroPqrsDTO pqrsDTO)throws Exception;
+    void crearCita(DetalleMedicoCitaDTO medicoDTO, RegistroCitaDTO citaDTO,
+                     DetallePacienteDTO pacienteDTO, LocalDateTime fechaCita,
+                     Especialidad especialidad) throws Exception;
 
-    void listarPQRSPaciente() throws Exception;
+    int modificarCita(DetalleCitaDTO citaDTO) throws Exception;
 
-    void responderPQRS() throws Exception;
+    void cancelarCita(DetalleCitaDTO citaDTO) throws Exception;
 
-    void listarCitasPaciente() throws Exception;
+    void crearPqrs(RegistroPqrsDTO pqrsDTO, DetallePacienteDTO pacienteDTO) throws Exception;
 
-    void filtrarCitasPorFecha() throws Exception;
+    List<ItemPqrsPacienteDTO> listarPqrsPaciente(int id) throws Exception;
 
-    void filtrarCitasPorMedico() throws Exception;
+    int responderPqrsPaciente(RegistroRespuestaPacienteDTO registroRespuestaPacienteDTO) throws Exception;
 
-    void verDetalleCita() throws Exception;
+    List<DetalleCitaDTO> listarCitasPaciente(int id) throws Exception;
+
+    List<ItemCitaDTO> filtrarCitasPorFecha(LocalDateTime fechaCita) throws Exception;
+
+    List<ItemCitaDTO> filtrarCitasPorMedico(String nombreMedico) throws Exception;
+
+    DetalleCitaDTO verDetalleCita(int id) throws Exception;
 }

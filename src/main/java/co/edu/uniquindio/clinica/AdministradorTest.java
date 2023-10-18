@@ -3,6 +3,8 @@ package co.edu.uniquindio.clinica;
 
 import co.edu.uniquindio.clinica.dto.admin.HorarioDTO;
 import co.edu.uniquindio.clinica.dto.admin.RegistroMedicoDTO;
+import co.edu.uniquindio.clinica.dto.administrador.RegistroMedicoDTO;
+import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
 import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
 import co.edu.uniquindio.clinica.servicios.interfaces.AdministradorServicio;
 import jakarta.transaction.Transactional;

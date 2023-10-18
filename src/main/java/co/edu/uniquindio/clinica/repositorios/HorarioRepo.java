@@ -12,6 +12,8 @@ public interface HorarioRepo extends JpaRepository<HorarioMedico, Integer> {
 
     List<HorarioMedico> findAllByMedicoCodigo(int codigo);
 
+    List<HorarioMedico> findByMedico_Id(int id);
+
     List<HorarioMedico> findByHoraInicio(LocalDateTime horaInicio);
 
 }

@@ -7,16 +7,14 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.EqualsAndHashCode;
+
+import lombok.*;
 
 @Entity
 @Table(name="pqrs")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -25,7 +23,7 @@ public class Pqrs implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @EqualsAndHashCode.Include
-    private int id;
+    private int codigo;
 
     @Column(name = "fecha_creacion")
     private LocalDateTime FechaCreacion;
@@ -37,7 +35,7 @@ public class Pqrs implements Serializable {
     private Cita cita;
 
     @Column(name = "paciente")
-    private String nombrePaciente;
+    private Paciente paciente;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "estado_pqrs")

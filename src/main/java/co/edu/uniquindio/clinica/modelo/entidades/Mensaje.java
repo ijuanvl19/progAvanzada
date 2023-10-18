@@ -23,10 +23,10 @@ public class Mensaje implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int codigo;
 
     @Column(name = "mensaje", length = 200)
-    private String Mensaje;
+    private String contenido;
 
     @Column(name = "id_pqrs")
     private Pqrs pqrs;

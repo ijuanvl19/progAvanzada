@@ -8,9 +8,9 @@ public record NewPasswordDTO(
         @NotEmpty
         int id,
         @NotEmpty
-        String dni,
+        String cedula,
         @NotEmpty
-        String name,
+        String nombre,
         @NotEmpty
         String email,
         @NotEmpty
