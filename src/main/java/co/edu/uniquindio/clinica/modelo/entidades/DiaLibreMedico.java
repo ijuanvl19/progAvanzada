@@ -12,7 +12,7 @@ public class DiaLibreMedico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private int codigo;
 
     @Column(name = "fecha_libre")
     private LocalDateTime fechaLibre;

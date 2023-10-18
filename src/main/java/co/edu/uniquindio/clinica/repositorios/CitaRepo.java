@@ -4,19 +4,21 @@ import co.edu.uniquindio.clinica.modelo.entidades.Cita;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface CitaRepo extends JpaRepository<Cita, Integer> {
 
-    Cita findByPacienteCedula(String cedula);
+    //Cita findByPacienteCedula(String cedula);
 
-    Cita findAllByPaciente(String cedula);
+    List<Cita> findByPacienteCedula(String cedula);
 
-    Cita findCitaByMedicoId(int id);
+    List<Cita> findAllById(int id);
 
-    Cita findCitasByMedico(String cedula);
+    List<Cita> findAllByFechaCita(LocalDateTime fecha);
 
-
+    List<Cita> findAllByMedicoNombre(String nombre);
 
 }

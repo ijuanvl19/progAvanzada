@@ -21,7 +21,7 @@ public class Cita implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int codigo;
 
     @Column(name="fecha_creacion")
     private LocalDateTime fechaCreacion;
@@ -32,11 +32,11 @@ public class Cita implements Serializable {
     @Column(name="motivo")
     private String motivo;
 
-    @Column(name = "nombre_paciente",nullable = false)
-    private String NombrePaciente;
+    @Column(name = "paciente",nullable = false)
+    private Paciente paciente;
 
-    @Column(name = "nombre_medico",nullable = false)
-    private String nombreMedico;
+    @Column(name = "medico",nullable = false)
+    private Medico medico;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "estado_cita")
