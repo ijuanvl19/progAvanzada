@@ -1,10 +1,11 @@
 package co.edu.uniquindio.clinica.repositorios;
 
-import co.edu.uniquindio.clinica.modelo.entidades.Especialidad;
 import co.edu.uniquindio.clinica.modelo.entidades.Medico;
+import co.edu.uniquindio.clinica.modelo.enums.Especialidad;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface MedicoRepo extends JpaRepository<Medico, Integer> {
@@ -13,5 +14,6 @@ public interface MedicoRepo extends JpaRepository<Medico, Integer> {
 
     Medico findByCedula(String cedula);
 
-    Medico findAllByEspecialidad(Especialidad especialidad);
+    List<Medico> findAllByEspecialidad(Especialidad especialidad);
+
 }

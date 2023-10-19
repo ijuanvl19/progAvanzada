@@ -1,6 +1,7 @@
-package co.edu.uniquindio.clinica.servicios;
+package co.edu.uniquindio.clinica.servicios.interfaces;
 
-import co.edu.uniquindio.clinica.dto.*;
+import co.edu.uniquindio.clinica.dto.administrador.*;
+import co.edu.uniquindio.clinica.modelo.enums.EstadoPqrs;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,13 +19,13 @@ public interface AdministradorServicio {
 
     DetalleMedicoDTO obtenerMedico(int codigo) throws Exception;
 
-    List<ItemPQRSDTO> listarPQRS() throws Exception;
+    List<ItemPqrsDTO> listarPqrs() throws Exception;
 
-    DetallePQRSDTO verDetallePQRS(int codigo) throws Exception;
+    DetallePqrsDTO verDetallePqrs(int codigo) throws Exception;
 
     int responderPQRS(RegistroRespuestaDTO registroRespuestaDTO) throws Exception;
 
-    void cambiarEstadoPQRS(int codigoPQRS, EstadoPQRS estadoPQRS) throws Exception;
+    void cambiarEstadoPqrs(int codigoPqrs, EstadoPqrs estadoPqrs) throws Exception;
 
-    List<ItemCitaAdminDTO> listarCitas() throws Exception;
+    List<ItemCitaAdminDTO> listarCitasMedico(DetalleMedicoDTO medicoDTO) throws Exception;
 }

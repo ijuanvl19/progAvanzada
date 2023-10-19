@@ -1,13 +1,14 @@
-package co.edu.uniquindio.clinica.dto;
+package co.edu.uniquindio.clinica.dto.paciente;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
-public record RegistroRespuestaDTO(
+public record RegistroRespuestaPacienteDTO(
+
         @Positive
         int codigoCuenta,
         @Positive
-        int codigoPQRS,
+        int codigoPqrs,
         @Positive
         int codigoMensaje,
         @NotBlank

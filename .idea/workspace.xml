@@ -4,44 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4426af2-e991-4bd5-b5ee-a68085395125" name="Changes" comment="Se crea paquete DTO con subpaquetes administrador, medico y paciente con sus respectivas clases, interfaces y records.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/AdministradorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/HorarioMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/enums/Ciudad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/enums/Especialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/enums/EstadoCita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/enums/EstadoPqrs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/CitaRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/CuentaRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/HorarioRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/MedicoRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/MensajeRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/PqrsRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/AutenticacionServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/EmailServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/ImagenesServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/MedicoServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/PacienteServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/DetallePqrsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/DetallePqrsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/ItemPqrsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/ItemPqrsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/RegistroRespuestaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/RegistroRespuestaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/DetalleMedicoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/DetalleMedicoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/HorarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/HorarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/RegistroMedicoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/administrador/RegistroMedicoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Medico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/AdministradorServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/AdministradorServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/AutenticacionServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/AutenticacionServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/EmailServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/EmailServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/ImagenesServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/ImagenesServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/MedicoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/MedicoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/PacienteServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/PacienteServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/AdministradorServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/AdministradorServicioImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="b4426af2-e991-4bd5-b5ee-a68085395125" name="Changes" comment="Cambios en MedicoServicioImpl" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,14 +18,41 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Record" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/Leo" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -94,6 +84,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/juanp/Downloads/ejemplotienda&quot;,
@@ -101,6 +92,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -152,7 +144,41 @@
       <workItem from="1696521230712" duration="369000" />
       <workItem from="1696538751488" duration="4254000" />
       <workItem from="1696564895770" duration="1109000" />
-      <workItem from="1696567341659" duration="2317000" />
+      <workItem from="1696567341659" duration="6449000" />
+      <workItem from="1696575163826" duration="2044000" />
+      <workItem from="1696614051599" duration="1055000" />
+      <workItem from="1696615600271" duration="661000" />
+      <workItem from="1696635889840" duration="474000" />
+      <workItem from="1696640504996" duration="3353000" />
+      <workItem from="1696649174767" duration="1351000" />
+      <workItem from="1696650857409" duration="5585000" />
+      <workItem from="1696824116838" duration="4783000" />
+      <workItem from="1696866754260" duration="6037000" />
+      <workItem from="1696880181833" duration="4474000" />
+      <workItem from="1696894760204" duration="912000" />
+      <workItem from="1697258563179" duration="506000" />
+      <workItem from="1697335217415" duration="11489000" />
+      <workItem from="1697353063992" duration="1691000" />
+      <workItem from="1697398825111" duration="6757000" />
+      <workItem from="1697410840090" duration="21625000" />
+      <workItem from="1697441150065" duration="101000" />
+      <workItem from="1697441437260" duration="648000" />
+      <workItem from="1697479157986" duration="333000" />
+      <workItem from="1697480992430" duration="4259000" />
+      <workItem from="1697486505846" duration="4807000" />
+      <workItem from="1697496610864" duration="1421000" />
+      <workItem from="1697498856400" duration="16658000" />
+      <workItem from="1697520292456" duration="9043000" />
+      <workItem from="1697557264389" duration="9131000" />
+      <workItem from="1697569689402" duration="3120000" />
+      <workItem from="1697591801838" duration="659000" />
+      <workItem from="1697594365993" duration="556000" />
+      <workItem from="1697598416166" duration="18630000" />
+      <workItem from="1697643369765" duration="936000" />
+      <workItem from="1697648855491" duration="4291000" />
+      <workItem from="1697656423645" duration="94000" />
+      <workItem from="1697666340552" duration="342000" />
+      <workItem from="1697666757224" duration="5239000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -170,7 +196,35 @@
       <option name="project" value="LOCAL" />
       <updated>1694226694987</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se organiza paquete entidades, se crea clases faltantes, se crean las impl de los servicios vistos en clase, se crea paquete enums con los enums vistos en clase">
+      <created>1696570044605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696570044605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Se estan creando los metodos para el PacienteServicioImpl">
+      <created>1697505525057</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697505525057</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Se arreglan errores en AdministradorServicioImpl">
+      <created>1697570724259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697570724260</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Se crean metodos faltantes de CRUD de paciente, pqrss y cita en PacienteServicioImpl y AdministradorServicioImpl">
+      <created>1697644376208</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697644376208</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +241,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Leo" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -203,24 +257,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commit inicial" />
     <MESSAGE value="Commit con Entidades atributos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit con Entidades atributos" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Paciente.java</url>
-          <line>26</line>
-          <properties field="Telefono" class="co.edu.uniquindio.clinica.modelo.Paciente" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/Paciente.java</url>
-          <line>23</line>
-          <properties field="idPaciente" class="co.edu.uniquindio.clinica.modelo.Paciente" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Se organiza paquete entidades, se crea clases faltantes, se crean las impl de los servicios vistos en clase, se crea paquete enums con los enums vistos en clase" />
+    <MESSAGE value="Se estan creando los metodos para el PacienteServicioImpl" />
+    <MESSAGE value="Se arreglan errores en AdministradorServicioImpl" />
+    <MESSAGE value="Se crean metodos faltantes de CRUD de paciente, pqrss y cita en PacienteServicioImpl y AdministradorServicioImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean metodos faltantes de CRUD de paciente, pqrss y cita en PacienteServicioImpl y AdministradorServicioImpl" />
   </component>
 </project>

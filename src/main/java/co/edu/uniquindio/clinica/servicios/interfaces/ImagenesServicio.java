@@ -1,4 +1,4 @@
-package co.edu.uniquindio.clinica.servicios;
+package co.edu.uniquindio.clinica.servicios.interfaces;
 
 import org.springframework.stereotype.Service;
 

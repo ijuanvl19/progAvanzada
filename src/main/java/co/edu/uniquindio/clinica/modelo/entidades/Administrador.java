@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.EqualsAndHashCode;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,10 +19,10 @@ public class Administrador extends Cuenta implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    private String idAdministrador;
+    private int id;
 
+    @Column(name = "nombre")
     private String NombreAdministrador;
-
 
 }
 

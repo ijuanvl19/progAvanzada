@@ -12,6 +12,7 @@ import lombok.ToString;
 import lombok.EqualsAndHashCode;
 
 @Entity
+@Table(name="medicamento")
 @Getter
 @Setter
 @NoArgsConstructor
