@@ -27,5 +27,5 @@ public interface AdministradorServicio {
 
     void cambiarEstadoPqrs(int codigoPqrs, EstadoPqrs estadoPqrs) throws Exception;
 
-    List<ItemCitaAdminDTO> listarCitas() throws Exception;
+    List<ItemCitaAdminDTO> listarCitasMedico(DetalleMedicoDTO medicoDTO) throws Exception;
 }
