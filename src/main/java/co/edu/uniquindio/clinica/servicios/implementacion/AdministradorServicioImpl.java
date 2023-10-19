@@ -293,13 +293,13 @@ public class AdministradorServicioImpl implements AdministradorServicio {
     }
 
     @Override
-    public List<ItemCitaAdminDTO> listarCitas() throws Exception {
+    public List<ItemCitaAdminDTO> listarCitasMedico(DetalleMedicoDTO medicoDTO) throws Exception {
 
-        List<Cita> citas = citaRepo.findAll();
+        List<Cita> citas = citaRepo.findAllByMedicoNombre(medicoDTO.nombre());
         List<ItemCitaAdminDTO> respuesta = new ArrayList<>();
 
         if(citas.isEmpty()){
-            throw new Exception("No existen citas creadas");
+            throw new Exception("No existen citas creadas al medico " + medicoDTO.nombre());
         }
 
         for( Cita c : citas ){
