@@ -19,17 +19,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class MedicoServicioImpl implements MedicoServicio {
 
-    private final MedicoRepo medicoRepo;
-    private final PqrsRepo pqrsRepo;
-    private final CuentaRepo cuentaRepo;
-    private final MensajeRepo mensajeRepo;private final CitaRepo citaRepo;
-    private final HorarioRepo horarioRepo;private final AtencionRepo atencionRepo;
+    private final CitaRepo citaRepo;
+    private final AtencionRepo atencionRepo;
     private final DiaLibreRepo diaLibreRepo;
 
     @Override
@@ -58,7 +54,7 @@ public class MedicoServicioImpl implements MedicoServicio {
     }
 
     @Override
-    public List<ItemCitaDTO> listarCitasPendientesDia(DetalleMedicoDTO medicoDTO) {
+    public List<ItemCitaDTO> listarCitasPendientesDia(DetalleMedicoDTO medicoDTO) throws Exception {
 
         LocalDateTime fechaAhora = LocalDateTime.now();
         List<Cita> citas = citaRepo.findByMedico_Id(medicoDTO.codigo());
@@ -118,8 +114,6 @@ public class MedicoServicioImpl implements MedicoServicio {
         return atenciones;
 
     }
-
-
 
     @Override
     public LocalDateTime agendarDiaLibre(DetalleMedicoDTO medicoDTO, DiaLibreDTO fechaLibreDTO) throws Exception{

@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4426af2-e991-4bd5-b5ee-a68085395125" name="Changes" comment="Cambios en MedicoServicioImpl">
+    <list default="true" id="b4426af2-e991-4bd5-b5ee-a68085395125" name="Changes" comment="Implementación de los metodos de MedicoServicioImpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/medico/RegistroAtencionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/dto/medico/RegistroAtencionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/DiaLibreMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/modelo/entidades/DiaLibreMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/AtencionRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/repositorios/AtencionRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/AdministradorServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/AdministradorServicioImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/MedicoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/implementacion/MedicoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/interfaces/MedicoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/clinica/servicios/interfaces/MedicoServicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +186,7 @@
       <workItem from="1697687369871" duration="64000" />
       <workItem from="1697689927587" duration="3568000" />
       <workItem from="1697695368545" duration="220000" />
-      <workItem from="1697697146873" duration="3893000" />
+      <workItem from="1697697146873" duration="4195000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -251,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697685222074</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implementación de los metodos de MedicoServicioImpl">
+      <created>1697701179233</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697701179233</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +291,7 @@
     <MESSAGE value="Se arreglan errores en AdministradorServicioImpl" />
     <MESSAGE value="Se crean metodos faltantes de CRUD de paciente, pqrss y cita en PacienteServicioImpl y AdministradorServicioImpl" />
     <MESSAGE value="Cambios en MedicoServicioImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios en MedicoServicioImpl" />
+    <MESSAGE value="Implementación de los metodos de MedicoServicioImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementación de los metodos de MedicoServicioImpl" />
   </component>
 </project>
