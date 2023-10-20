@@ -2,11 +2,13 @@ package co.edu.uniquindio.clinica.servicios.implementacion;
 
 
 import co.edu.uniquindio.clinica.dto.administrador.DetalleMedicoDTO;
+import co.edu.uniquindio.clinica.dto.medico.DiaLibreDTO;
 import co.edu.uniquindio.clinica.dto.medico.ItemCitaDTO;
 import co.edu.uniquindio.clinica.dto.medico.RegistroAtencionDTO;
 import co.edu.uniquindio.clinica.dto.paciente.DetallePacienteDTO;
 import co.edu.uniquindio.clinica.modelo.entidades.Atencion;
 import co.edu.uniquindio.clinica.modelo.entidades.Cita;
+import co.edu.uniquindio.clinica.modelo.entidades.DiaLibreMedico;
 import co.edu.uniquindio.clinica.modelo.enums.EstadoCita;
 import co.edu.uniquindio.clinica.repositorios.*;
 import co.edu.uniquindio.clinica.servicios.interfaces.MedicoServicio;
@@ -14,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +24,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MedicoServicioImpl implements MedicoServicio {
 
-    private final MedicoRepo medicoRepo;
-    private final PqrsRepo pqrsRepo;
-    private final CuentaRepo cuentaRepo;
-    private final MensajeRepo mensajeRepo;
     private final CitaRepo citaRepo;
-    private final HorarioRepo horarioRepo;
     private final AtencionRepo atencionRepo;
+    private final DiaLibreRepo diaLibreRepo;
 
     @Override
     public List<ItemCitaDTO> listarCitasPendientes(DetalleMedicoDTO medicoDTO) throws Exception {
@@ -55,7 +54,7 @@ public class MedicoServicioImpl implements MedicoServicio {
     }
 
     @Override
-    public List<ItemCitaDTO> listarCitasPendientesDia(DetalleMedicoDTO medicoDTO) {
+    public List<ItemCitaDTO> listarCitasPendientesDia(DetalleMedicoDTO medicoDTO) throws Exception {
 
         LocalDateTime fechaAhora = LocalDateTime.now();
         List<Cita> citas = citaRepo.findByMedico_Id(medicoDTO.codigo());
@@ -81,10 +80,10 @@ public class MedicoServicioImpl implements MedicoServicio {
     }
 
     @Override
-    public RegistroAtencionDTO atenderCita(DetallePacienteDTO pacienteDTO, DetalleMedicoDTO medicoDTO) throws Exception{
+    public void atenderCita(DetallePacienteDTO pacienteDTO, DetalleMedicoDTO medicoDTO,
+                                           RegistroAtencionDTO atencionDTO) throws Exception{
 
         List<Cita> citas = citaRepo.findByPacienteCedula(pacienteDTO.cedula());
-        List<RegistroAtencionDTO> atencion = new ArrayList<>();
 
         if (citas.isEmpty()) {
              throw new Exception("No existe citas agendadas ");
@@ -92,15 +91,19 @@ public class MedicoServicioImpl implements MedicoServicio {
         for (Cita c : citas) {
 
             if (c.getFechaCita().equals(LocalDateTime.now()) && c.getMedico().getId() == medicoDTO.codigo()) {
-                atencion.add(new RegistroAtencionDTO(
-                        c.
-                ));
-            }
-        }
 
+                Atencion atencion = new Atencion();
+                atencion.setDiagnostico(atencionDTO.diagnostico());
+                atencion.setTratamiento(atencionDTO.tratamiento());
+                atencion.setNotasMedicas(atencionDTO.notasMedicas());
+                atencion.setCita(c);
+                atencionRepo.save(atencion);
+            }
+
+        }
     }
 
-    public List<Atencion> listarAtencionesPaciente(DetalleMedicoDTO pacienteDTO) throws Exception {
+    public List<Atencion> listarAtencionesPaciente(DetallePacienteDTO pacienteDTO) throws Exception {
 
         List<Atencion> atenciones = atencionRepo.findAllByCita_Paciente_Cedula(pacienteDTO.cedula());
 
@@ -113,18 +116,55 @@ public class MedicoServicioImpl implements MedicoServicio {
     }
 
     @Override
-    public void listarCitasPaciente() throws Exception {
+    public LocalDateTime agendarDiaLibre(DetalleMedicoDTO medicoDTO, DiaLibreDTO fechaLibreDTO) throws Exception{
 
+        LocalDateTime fechaSistema = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy MMMM dd, HH:mm");
+        String fecha = formato.format(fechaLibreDTO.fechaLibre());
 
+        if (fechaLibreDTO.fechaLibre().isBefore(fechaSistema)) {
+            throw new Exception("Fecha invalida");
+        }
+        List<Cita> citas = citaRepo.findByMedico_Id(medicoDTO.codigo());
+
+        if (citas.isEmpty()) {
+            throw new Exception("No tiene citas agendadas");
+        }
+        for (Cita c : citas) {
+
+            String fechaCita = formato.format(c.getFechaCita());
+            if (fecha.equals(fechaCita)) {
+                throw new Exception("Tiene citas agendadas en esa fecha");
+            }else {
+                DiaLibreMedico diaLibreMedico = new DiaLibreMedico();
+                diaLibreMedico.setFechaLibre(fechaLibreDTO.fechaLibre());
+                diaLibreRepo.save(diaLibreMedico);
+            }
+        }
+        return fechaLibreDTO.fechaLibre();
     }
 
     @Override
-    public void agendarDiaLibre() throws Exception{
+    public List<ItemCitaDTO> listarCitasRealizadasMedico(DetalleMedicoDTO medicoDTO) throws Exception{
 
-    }
+        List<Cita> citas = citaRepo.findAllById(medicoDTO.codigo());
 
-    @Override
-    public void listarCitasRealizadasMedico() throws Exception{
+        if (citas.isEmpty()) {
+            throw new Exception("No hay citas que mostrar");
+        }
 
+        List<ItemCitaDTO> lista = new ArrayList<>();
+
+        for (Cita c : citas) {
+
+            lista.add(new ItemCitaDTO(
+                    c.getCodigo(),
+                    c.getPaciente().getCedula(),
+                    c.getPaciente().getNombre(),
+                    c.getMotivo(),
+                    c.getFechaCita()
+            ));
+        }
+        return lista;
     }
 }

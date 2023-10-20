@@ -2,6 +2,8 @@ package co.edu.uniquindio.clinica.servicios.implementacion;
 
 import co.edu.uniquindio.clinica.dto.administrador.*;
 import co.edu.uniquindio.clinica.dto.medico.HorarioDTO;
+import co.edu.uniquindio.clinica.dto.medico.RegistroAtencionDTO;
+import co.edu.uniquindio.clinica.dto.paciente.DetallePacienteDTO;
 import co.edu.uniquindio.clinica.modelo.entidades.*;
 import co.edu.uniquindio.clinica.modelo.enums.EstadoPqrs;
 import co.edu.uniquindio.clinica.modelo.enums.EstadoUsuario;
@@ -124,7 +126,8 @@ public class AdministradorServicioImpl implements AdministradorServicio {
     }
 
     @Override
-    public List<ItemMedicoDTO> listarMedicos() throws Exception {
+    public List<ItemMedicoDTO> listarMedicos(DetallePacienteDTO pacienteDTO, DetalleMedicoDTO medicoDTO,
+                                             RegistroAtencionDTO atencionDTO) throws Exception {
 
         List<Medico> medicos = medicoRepo.findAll();
 
