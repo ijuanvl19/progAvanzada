@@ -433,4 +433,33 @@ public class PacienteServicioImpl implements PacienteServicio {
         );
 
     }
+
+    @Override
+    public void inactivarCuenta(DetallePacienteDTO pacienteDTO) throws Exception {
+
+        Optional<Usuario>  optional = cuentaRepo.findById(pacienteDTO.id());
+        List<Cita> citas = citaRepo.findAllById(pacienteDTO.id());
+        int contador = 0;
+        Usuario buscado = optional.get();
+
+        if (optional.isEmpty()) {
+            throw new Exception("No existe la cuenta");
+        }
+
+        if (citas.isEmpty()){
+            throw new Exception("No tiene historial de citas");
+        }
+
+        for (Cita c : citas) {
+            contador++;
+            if (c.getEstadoCita().equals(EstadoCita.PROGRAMADA)) {
+                throw new Exception("No puede cancelar la cuenta porque tiene citas programadas");
+            }
+        }
+        if (contador > 0) {
+            buscado.setEstado(EstadoUsuario.INACTIVO);
+            cuentaRepo.save(buscado);
+        }
+
+    }
 }
